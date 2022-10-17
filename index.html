@@ -122,14 +122,14 @@
 <div class="bbox">
     <div style="background-color:rgb(249,245,246);height:226px;width:1080px;">
         <img src="tutu/dx-sc/2-1.png" style="margin-top:130px;margin-left: 80px;float: left;clear: both;">
-        <img src="tutu/dx-sc/2-2.png" style="margin-top:120px;margin-left: 60px;">
+        <img class="yhtb" src="tutu/dx-sc/工商银行.png" style="margin-top:120px;margin-left: 60px;width: 80px;height: 80px;">
 
-        <div contenteditable class="dm"
+        <div contenteditable class="yh"
              style="display: inline-block; font-family:字体子系;font-size:55px;border:none;margin-top: -110px;margin-left:350px; background-color:transparent;float: left;clear: both;color: rgb(0,0,0);"
              type="text"
              name="text"
              value="">中国银行</div>
-        <div contenteditable class="dm"
+        <div contenteditable class="hm"
              style="display: inline-block; font-family:字体子系;font-size:40px;border:none;margin-top: -25px;margin-left:350px; background-color:transparent;color: rgb(72,67,74);float: left;clear: both;"
              type="text"
              name="text"
@@ -137,19 +137,16 @@
         <img src="tutu/dx-sc/2-3.png" style="display: inline-block;margin-top:-90px;margin-left:480px;">
         <img src="tutu/dx-sc/2-4.png" style="display: inline-block;margin-top:px;margin-left:100px;">
 
-
     </div>
     <div id="mydiv" class="huakuai"
-         style="position: relative;display: inline-block;background-color: rgb(248,244,245);height: 1887px;width: 1080px;margin-bottom: -5px;flex-direction: column;">
+         style="position: relative;display: inline-block;background-color: rgb(248,244,245);height: 1887px;width: 1080px;margin-bottom: -5px;margin-top:-5px;flex-direction: column;">
         <div class="box" id="container"></div>
-
 
     </div>
     <div style="background-color:rgb(247,247,247);">
         <img src="tutu/dx-sc/2-5.png">
     </div>
 </div>
-
 
 <div class="function-box"
      style="background-color: rgb(218,185,149);height: 2280px;width: 600px;margin-left: 1300px;margin-top: -2000px;">
@@ -159,6 +156,25 @@
                 style="margin-bottom:30px;font-weight:550;color:;background-color:transparent;border-radius:10px;margin-left:100px;margin-top:-40px;font-size: 50px;"
         >添加对话
         </button>
+
+        <div style="display: inline-block;font-size: 50px;margin-bottom:30px;">银行名称/电话号码选择：
+            <select style="font-size: 50px; width: 400px;height: 80px;" id="pdd" onchange="handleSelectChange1()">
+                <option value="95508">光大银行</option>
+                <option value="95555">广发银行</option>
+                <option value="95577">招商银行</option>
+                <option value="95501">华夏银行</option>
+                <option value="95558">深圳发展银行</option>
+                <option value="95561">兴业银行</option>
+                <option value="95568">民生银行</option>
+                <option value="95528">浦发银行</option>
+                <option value="95559">交通银行</option>
+                <option value="95566">中国银行</option>
+                <option value="95599">农业银行</option>
+                <option value="95533">建设银行</option>
+                <option value="95588">工商银行</option>
+            </select>
+        </div>
+
         <hr style="margin-bottom: 30px;">
         <!-- 插入重点文字 -->
 
@@ -170,15 +186,6 @@
                        value="#5B6B92">
         </label>
 
-        <div style="display: inline-block;font-size: 50px;">常用颜色选择：
-            <select style="font-size: 50px; width: 400px;height: 80px;" id="pd" onchange="handleSelectChange()">
-                <option value="#7d90a9" style="background-color:#7d90a9;"></option>
-                <option value="#375082" style="background-color:#375082;"></option>
-                <option value="#118ee9" style="background-color:#118ee9;"></option>
-                <option value="#ff9530" style="background-color:#ff9530;"></option>
-                <option value="#576b95" style="background-color:#576b95;"></option>
-            </select>
-        </div>
         <div>
             <label style="font-size: 50px;margin-left: px;">
                 有下划线
@@ -199,7 +206,6 @@
         <div style="margin-top: 50px;font-size: 50px;">删除对话在内容右上角，鼠标移动到附近会自动显示！</div>
 
         <hr>
-
 
     </div>
 
@@ -247,6 +253,20 @@
         let cs = document.querySelector(".key-color");
 
         cs.value = item.value // 更改颜色
+    }
+</script>
+
+<script>
+    function handleSelectChange1() {
+        let pid = document.querySelector("#pdd");
+        let item = pid.options[pid.selectedIndex];
+        let yh = document.querySelector(".yh");
+        let hm = document.querySelector(".hm");
+        let yhtb = document.querySelector(".yhtb");
+
+        yhtb.src =  "tutu/dx-sc/" + item.innerText + ".png"
+        yh.innerText = item.innerText
+        hm.innerText = item.value
     }
 </script>
 
